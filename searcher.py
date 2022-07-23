@@ -27,7 +27,15 @@ elif storage.lower() == 'sdcard' :
         search_path = os.getcwd()
         get_all_files(search_path)
 else :
-    print('#')
+    get_all_files(search_path)
+    os.chdir('/storage')
+    pos = os.listdir()
+    for i in pos :
+        if i == 'emulated' or i == 'self' :
+            continue
+        os.chdir(f'/storage/{i}')
+        search_path = os.getcwd()
+        get_all_files(search_path)
 if len(files) == 0 :
     print(f'No files called {search}')
     print('Are you sure thats the file name')
