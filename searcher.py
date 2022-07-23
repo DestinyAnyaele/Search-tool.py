@@ -14,7 +14,7 @@ def get_all_files(path) :
                 files.append(temp + f'/{searching}')
         if  searching == os.listdir(path)[-1] :
             path = temp.replace(f'/{searching}','',1)
-search_path = os.getcwd()
+search_path = '/storage/emulated/0'
 if storage.lower() == 'phone' :
     get_all_files(search_path)
 elif storage.lower() == 'sdcard' :
